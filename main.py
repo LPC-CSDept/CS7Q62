@@ -1,25 +1,17 @@
 
 
-def split(number):
+def getPrimeNumber(begin, end):
     ##################################################
     # Code your program here
     ##################################################
-    pivot = number[len(number)-1]
-    left = [v for v in number if v < pivot]
-    right = [v for v in number if v > pivot]
-
-    for i, v in enumerate(left):
-        number[i] = v
-    pidx = i+1
-    number[pidx] = pivot
-    for i, v in enumerate(right):
-        number[pidx+i+1] = v
 
 
 def main():
-    number = list(map(int, input().split()))
-    split(number)
-    print(number)
+    begin = int(input('Enter the number for starting of range: '))
+    end = int(input('Enter the number for end of range: '))
+    gen = getPrimeNumber(begin, end)
+
+    print(list(gen))
 
 
 if __name__ == '__main__':
